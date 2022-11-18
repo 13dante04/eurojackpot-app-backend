@@ -1,0 +1,42 @@
+{
+  "name": "node-web-scraper",
+  "version": "1.0.0",
+  "description": "Node web scraper",
+  "main": "index.js",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "date-fns": "^2.29.3",
+    "node-fetch": "^3.3.0",
+    "puppeteer": "^19.2.2",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "@types/webpack": "^5.28.0",
+    "@webpack-cli/generators": "^3.0.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "declaration-bundler-webpack-plugin": "^1.0.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.7.1",
+    "run-s": "^0.0.0",
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.9.3",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=production --define-process-env-node-env=production",
+    "start": "run-s build && node dist/main.js",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production --define-process-env-node-env=production",
+    "watch": "webpack --watch",
+    "serve": "webpack serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
