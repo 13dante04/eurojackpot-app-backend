@@ -5,6 +5,8 @@ import { EurojackpotResult } from '../interfaces/eurojackpot-result.interface';
 import { nextFriday, nextTuesday, previousFriday, previousTuesday, isSameDay, addDays, isTuesday, isFriday } from 'date-fns';
 const EUROJACKPOT_RESULT_SITE = 'https://www.eurojackpot.org/en/results';
 
+
+
 export async function getWebpageContent(url: string): Promise<string> {
         try {
             const response = await fetch(url);

@@ -1,11 +1,19 @@
-import { getResults } from "./eurojackpot-results";
-const EUROJACKPOT_RESULT_SITE = 'https://www.eurojackpot.org/en/results';
+import express, { Express} from 'express';
+import homeRouter from "./api/v1/home/home";
+  
 
-async function main() {
-    let result = await getResults();
-    console.log('Latest eurojackpot results were: ', result);
-}
+const PORT = 3000;
 
-main()
-.then(() => console.log('Done'))
-.catch((error) => console.error(error));
+const app: Express = express();
+
+
+
+// app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
+app.use('/home', homeRouter);
+
+
+app.listen(PORT, () => {
+    console.log(`[server]: Server is running at http://localhost:${PORT}`);
+});
+
